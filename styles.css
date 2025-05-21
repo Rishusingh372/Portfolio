@@ -1300,3 +1300,132 @@ img {
         height: 300px;
     }
 }
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.modal-content {
+  background: white;
+  margin: 2% auto;
+  padding: 0;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+.form-header {
+  padding: 25px;
+  background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
+  color: white;
+}
+
+.form-header h3 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.form-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.4rem;
+}
+
+.form-header a {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-container {
+  height: 70vh;
+  overflow-y: auto;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Contact Button */
+.contact-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(58, 134, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(58, 134, 255, 0.6);
+}
+
+.contact-button i {
+  font-size: 1.8rem;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+  
+  .form-container {
+    height: 60vh;
+  }
+  
+  .contact-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 22px;
+    font-size: 1.4rem;
+  }
+}
